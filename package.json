@@ -1,0 +1,24 @@
+{
+  "name": "cinema-network",
+  "version": "1.0.0",
+  "description": "Express + Mongoose API Secvice",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Odvin/cinema-network.git"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "api"
+  ],
+  "author": "Dmytro Ovchynnykov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Odvin/cinema-network/issues"
+  },
+  "homepage": "https://github.com/Odvin/cinema-network#readme"
+}
