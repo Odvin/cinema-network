@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:4
+    expose:
+      - ${MONGO_SERVER_PORT}
+    ports:
+      - ${MONGO_SERVER_PORT}:${MONGO_SERVER_PORT}
+    environment:
+      - MONGO_SERVER_PORT=${MONGO_SERVER_PORT}
+      - MONGO_ROOT_USERNAME=${MONGO_ROOT_USER}
+      - MONGO_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+      - MONGO_DATABASE=${MONGO_DATABASE}
+    volumes:
+      - ./data/db:/data/db
+  api-server:
+    image: node:alpine
+    working_dir: /usr/src/api-server
+    environment:
+      - API_SERVER_PORT=${API_SERVER_PORT}
+      - MONGO_SERVER_PORT=${MONGO_SERVER_PORT}
+      - MONGO_ROOT_USERNAME=${MONGO_ROOT_USER}
+      - MONGO_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+      - MONGO_DATABASE=${MONGO_DATABASE}
+    ports:
+      - ${API_SERVER_PORT}:${API_SERVER_PORT}
+    expose:
+      - ${API_SERVER_PORT}
+    volumes:
+      - ./services/api-server:/usr/src/api-server
+    command: npm run api-dev
