@@ -1,0 +1,29 @@
+{
+  "cinemas": [
+    {
+      "_id": "5dc07e75d91a6d0085b4bc2e",
+      "city": "Kyiv",
+      "name": "Blocbaster"
+    },
+    {
+      "_id": "5dc07f87d91a6d0085b4bc2f",
+      "city": "Kyiv",
+      "name": "Kadr"
+    },
+    {
+      "_id": "5dc07f98d91a6d0085b4bc30",
+      "city": "Kyiv",
+      "name": "Kinodrom"
+    },
+    {
+      "_id": "5dc07ff8d91a6d0085b4bc31",
+      "city": "Lviv",
+      "name": "Planeta Kino"
+    },
+    {
+      "_id": "5dc0800fd91a6d0085b4bc32",
+      "city": "Lviv",
+      "name": "Multiplex"
+    }
+  ]
+}
