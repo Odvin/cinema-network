@@ -17,7 +17,12 @@ const findAllCinemas = async () => {
   return cinemas;
 }
 
+const findCinemaById = async cinemaId => {
+  return await Cinema.findById(cinemaId, null, { lean: true });
+} 
+
 module.exports = {
   persistCinema,
   findAllCinemas,
+  findCinemaById,
 };

@@ -14,6 +14,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(`${BASE_URL}/cinema/`, require('./routes/cinema'));
+app.use(`${BASE_URL}/hall/`, require('./routes/hall'));
 
 app.use(`${BASE_URL}/seed/`, require('./routes/seed'));
 

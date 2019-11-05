@@ -21,14 +21,14 @@ API has to support:
 ## Data storage model
 ![ER-diagram](/data/ER-diagram.png)
 
-It is possible to demoralize entities: Cinema and Hall and merge them into one Mongo collection. But if two cinema company rents the same halls then the relation between Cinema and Hall will be many-to-many. That's why we keep normalization, it gives us flexibility and opportunity to migration to PostgreSQL, easy to create resolves with GraphQL schema. 
+It is possible to denormalized entities: Cinema and Hall and merge them into one Mongo collection. But if two cinema company rents the same halls then the relation between Cinema and Hall will be many-to-many. That's why we keep normalization, it gives us flexibility and opportunity to migration to PostgreSQL, easy to create resolves with GraphQL schema. 
 
 ## API Routes
 __GET Requests__
 ```
 host/api/v1/cinema/list
-host/api/v1/halls/{cinema_id}
-host/api/v1/movies
+host/api/v1/hall/list/{cinema_id}
+host/api/v1/movie/list
 host/api/v1/sessions/{day}/{month}/{year}/{cinema_id}
 host/api/v1/sessions/{day}/{month}/{year}/{hall_id}
 ```
@@ -36,6 +36,7 @@ host/api/v1/sessions/{day}/{month}/{year}/{hall_id}
 __POST Requests__
 ```
 host/api/v1/cinema
+host/api/v1/hall
 ```
 
 ## DEV requirements
