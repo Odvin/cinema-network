@@ -1,14 +1,12 @@
 const router = require('express').Router();
-const { Cinema } = require('../../models/cinema');
+const { seedCinema } = require('../../models/cinema');
 const { cinemas } = require('../../models/seeds.json');
 
 router.get('/', async (req, res, next) => {
   try {
-    
-    await Cinema.deleteMany({});
-    await Cinema.insertMany(cinemas);
+    const response = await seedCinema(cinemas);
 
-    return res.json({ response: 'Database seeding is done'});
+    return res.json({ response });
   } catch (e) {
     return next(e);
   }
