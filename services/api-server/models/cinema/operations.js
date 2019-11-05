@@ -1,5 +1,12 @@
 const Cinema = require('./cinema');
 
+const seedCinema = async (cinemas) => {
+  await Cinema.deleteMany({});
+  await Cinema.insertMany(cinemas);
+
+  return 'Database seeding is done';
+}
+
 const persistCinema = async cinema => {
   const cinemaInstance = new Cinema(cinema);
   await cinemaInstance.save();
@@ -25,4 +32,5 @@ module.exports = {
   persistCinema,
   findAllCinemas,
   findCinemaById,
+  seedCinema,
 };

@@ -42,12 +42,19 @@ host/api/v1/hall
 ## DEV requirements
 1. Docker
 2. Docker-compose
+3. node
+
+Install dependence
+```
+cd /service/api-server
+mpm i
+```
 
 To start the project run in the root directory:
 ```
 docker-compose up
 ```
-To set up *env* params create file __.env__ file in the root directory, see __.env.config__ (if you skip this step then the default values will be used).
+To set up *env* params create file __.env__ file in the root directory, see __.env.config__.
 
 *docker-compose* is used during development and may run and connect several services. For deployment individual *Docker* file will be used for each service.
 
@@ -57,3 +64,7 @@ To seed, the database, invoke the route.
 host/api/v1/seed
 ```
 The database will be cleaned and populated with predefined data.
+To get the list of *cinemas* use route
+```
+host/api/v1/cinema/list
+```
