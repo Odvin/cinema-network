@@ -1,8 +1,9 @@
 const cinemaValidation = require('./validation');
-const { persistCinema, findAllCinemas } = require('./operations');
+const { persistCinema, findAllCinemas, findCinemaById } = require('./operations');
 
 module.exports = {
   persistCinema,
   findAllCinemas,
+  findCinemaById,
   cinemaValidation,
 }
